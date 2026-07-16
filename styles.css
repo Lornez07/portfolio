@@ -467,6 +467,8 @@ section::after {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     overflow: hidden;
+    max-width: 480px;
+    margin-left: auto;
 }
 
 .terminal-header {
