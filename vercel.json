@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "functions": {
-    "api/*.js": {
-      "runtime": "vercel-node@4.x"
-    }
-  }
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "*.{html,css,js,pdf,json}", "use": "@vercel/static" }
+  ]
 }
