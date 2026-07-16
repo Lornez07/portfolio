@@ -343,9 +343,9 @@
         <div class="container">
             <h2 class="section-title"><span class="line"></span>Awards & Certifications</h2>
             <div class="awards-grid">
-                <a href="Coursera/best-software-project.png" target="_blank" class="award-card">
+                <a href="javascript:void(0)" class="award-card" id="awardPhoto" onclick="openLightbox()">
                     <div class="award-preview">
-                        <img src="Coursera/best-software-project.png" alt="Best Software Project award photo">
+                        <img src="Coursera/best-software-project.jpg" alt="Best Software Project award photo">
                     </div>
                     <h3>Best Software Project</h3>
                     <p>St. Louis College Valenzuela — Capstone recognition for E-Park Mo smart parking system.</p>
@@ -354,7 +354,7 @@
                 <a href="Coursera/google-ai-essentials.pdf" target="_blank" class="award-card">
                     <div class="award-preview">
                         <object data="Coursera/google-ai-essentials.pdf" type="application/pdf" aria-label="Google AI Essentials certificate preview">
-                            <p>Certificate preview not available</p>
+                            <div class="award-fallback">Certificate preview unavailable</div>
                         </object>
                     </div>
                     <h3>Google AI Essentials</h3>
@@ -364,7 +364,7 @@
                 <a href="Coursera/ai-fundamentals.pdf" target="_blank" class="award-card">
                     <div class="award-preview">
                         <object data="Coursera/ai-fundamentals.pdf" type="application/pdf" aria-label="AI Fundamentals certificate preview">
-                            <p>Certificate preview not available</p>
+                            <div class="award-fallback">Certificate preview unavailable</div>
                         </object>
                     </div>
                     <h3>AI Fundamentals</h3>
@@ -374,7 +374,7 @@
                 <a href="Coursera/prompt-engineering.pdf" target="_blank" class="award-card">
                     <div class="award-preview">
                         <object data="Coursera/prompt-engineering.pdf" type="application/pdf" aria-label="Prompt Engineering certificate preview">
-                            <p>Certificate preview not available</p>
+                            <div class="award-fallback">Certificate preview unavailable</div>
                         </object>
                     </div>
                     <h3>Prompt Engineering</h3>
@@ -384,7 +384,7 @@
                 <a href="Coursera/ai-for-app-building.pdf" target="_blank" class="award-card">
                     <div class="award-preview">
                         <object data="Coursera/ai-for-app-building.pdf" type="application/pdf" aria-label="AI for App Building certificate preview">
-                            <p>Certificate preview not available</p>
+                            <div class="award-fallback">Certificate preview unavailable</div>
                         </object>
                     </div>
                     <h3>AI for App Building</h3>
@@ -440,6 +440,11 @@
     </footer>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" src="Coursera/best-software-project.jpg" alt="Best Software Project award photo">
+    </div>
 
     <script src="script.js"></script>
 </body>

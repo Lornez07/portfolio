@@ -317,7 +317,8 @@ function initContactForm() {
             return showFormError(form.email, 'Invalid email address');
         if (!message) return showFormError(form.message, 'Message is required');
 
-        btn.textContent = 'Sending...';
+        btn.innerHTML = '<span class="spinner"></span> Sending...';
+        btn.classList.add('btn-loading');
         btn.disabled = true;
 
         try {
@@ -336,7 +337,8 @@ function initContactForm() {
                 <p>Message sent successfully! I'll get back to you soon.</p>
             </div>`;
         } catch (err) {
-            btn.textContent = btnText;
+            btn.innerHTML = btnText;
+            btn.classList.remove('btn-loading');
             btn.disabled = false;
             showFormError(null, err.message);
         }
@@ -387,3 +389,20 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// Lightbox
+// ============================================
+function openLightbox() {
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
