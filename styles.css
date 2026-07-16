@@ -957,6 +957,12 @@ section::after {
     transform: translateY(-2px);
 }
 
+.disabled-link {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /* Experience / Timeline */
 .experience {
     background: var(--bg-secondary);
