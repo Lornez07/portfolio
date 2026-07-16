@@ -321,15 +321,13 @@ function initContactForm() {
         btn.disabled = true;
 
         try {
-            const res = await fetch('/api/contact', {
+            const res = await fetch('https://formspree.io/f/your-form-id', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message }),
             });
 
-            const data = await res.json();
-
-            if (!res.ok) throw new Error(data.error || 'Failed to send');
+            if (!res.ok) throw new Error('Failed to send');
 
             form.innerHTML = `<div class="form-success">
                 <span class="success-icon">✓</span>
