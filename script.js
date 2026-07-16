@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNav();
     initScrollProgress();
     initParticles();
-    initGitHubStats();
 });
 
 function initCustomCursor() {
@@ -426,31 +425,6 @@ function initParticles() {
 
 // ============================================
 // GitHub Stats
-// ============================================
-function initGitHubStats() {
-    const el = document.getElementById('githubRepoCount');
-    if (!el) return;
-
-    const FALLBACK = '13+';
-    const cached = localStorage.getItem('ghRepoCount');
-    if (cached === '0+') localStorage.removeItem('ghRepoCount');
-    el.textContent = (cached && cached !== '0+') ? cached : FALLBACK;
-
-    fetch('https://api.github.com/users/Lornez07/repos?per_page=100')
-        .then(res => res.json())
-        .then(repos => {
-            if (Array.isArray(repos)) {
-                const count = repos.filter(r => !r.fork).length;
-                if (count > 0) {
-                    const text = count + '+';
-                    el.textContent = text;
-                    localStorage.setItem('ghRepoCount', text);
-                }
-            }
-        })
-        .catch(() => {});
-}
-
 // ============================================
 // Project Modal
 // ============================================
