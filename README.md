@@ -10,8 +10,9 @@ A dark-themed developer portfolio showcasing my projects and skills as a full-st
 
 - HTML5 / CSS3 (custom properties, animations, responsive)
 - Vanilla JavaScript (Intersection Observer, smooth scroll)
+- Node.js (Vercel serverless API via `@vercel/node`)
+- Nodemailer (email delivery)
 - Google Fonts (Fira Code, Inter)
-- Formspree (contact form backend)
 
 ## Features
 
@@ -20,7 +21,7 @@ A dark-themed developer portfolio showcasing my projects and skills as a full-st
 - Code block hero visual with syntax highlighting
 - Terminal-style about section
 - Responsive design with mobile navigation
-- Contact form with Formspree backend
+- Contact form with serverless API backend (Node.js + Nodemailer)
 - Intersection observer scroll animations
 - Experience timeline
 - Awards & certifications grid
@@ -33,15 +34,19 @@ npm run dev
 # or serve the static files with any HTTP server
 ```
 
-## Setup
+## Environment Variables
 
-1. Go to [Formspree](https://formspree.io) and create a free account
-2. Create a new form and copy your form ID
-3. Replace `your-form-id` in `index.html` (`action` attribute) and `script.js` (fetch URL)
+Copy `.env.example` to `.env` and fill in your credentials:
+
+| Variable         | Description                         |
+|------------------|-------------------------------------|
+| `EMAIL_USER`     | Gmail address for sending emails    |
+| `EMAIL_PASS`     | Gmail app password                  |
+| `RECIPIENT_EMAIL`| Where contact messages are sent     |
 
 ## Deployment
 
-The project is configured for [Vercel](https://vercel.com). Connect your repo and it deploys automatically — no environment variables needed.
+The project is configured for [Vercel](https://vercel.com). Connect your repo and add the environment variables above.
 
 ## Contact
 
