@@ -359,6 +359,25 @@ section {
     position: relative;
 }
 
+/* Smooth section dividers using angled gradient borders */
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--border-color) 15%,
+        var(--accent-primary) 50%,
+        var(--accent-secondary) 85%,
+        transparent 100%
+    );
+    opacity: 0.3;
+}
+
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
