@@ -431,17 +431,20 @@ function initGitHubStats() {
     const el = document.getElementById('githubRepoCount');
     if (!el) return;
 
+    const cached = localStorage.getItem('ghRepoCount');
+    if (cached) { el.textContent = cached; }
+
     fetch('https://api.github.com/users/Lornez07/repos?per_page=100')
         .then(res => res.json())
         .then(repos => {
             if (Array.isArray(repos)) {
                 const count = repos.filter(r => !r.fork).length;
-                el.textContent = count + '+';
-            } else {
-                el.textContent = '8+';
+                const text = count + '+';
+                el.textContent = text;
+                localStorage.setItem('ghRepoCount', text);
             }
         })
-        .catch(() => { el.textContent = '8+'; });
+        .catch(() => {});
 }
 
 // ============================================
