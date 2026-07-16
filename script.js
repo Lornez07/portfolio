@@ -433,7 +433,8 @@ function initGitHubStats() {
 
     const FALLBACK = '13+';
     const cached = localStorage.getItem('ghRepoCount');
-    el.textContent = cached || FALLBACK;
+    if (cached === '0+') localStorage.removeItem('ghRepoCount');
+    el.textContent = (cached && cached !== '0+') ? cached : FALLBACK;
 
     fetch('https://api.github.com/users/Lornez07/repos?per_page=100')
         .then(res => res.json())
