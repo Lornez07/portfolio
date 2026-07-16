@@ -435,7 +435,10 @@ function initGitHubStats() {
         .then(res => res.json())
         .then(repos => {
             if (Array.isArray(repos)) {
-                el.textContent = repos.length + '+';
+                const count = repos.filter(r => !r.fork).length;
+                el.textContent = count + '+';
+            } else {
+                el.textContent = '8+';
             }
         })
         .catch(() => { el.textContent = '8+'; });
