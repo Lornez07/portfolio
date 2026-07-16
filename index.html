@@ -7,14 +7,34 @@
     <meta name="description" content="Full-Stack Developer specializing in React, Next.js, Flutter, and Node.js. BS Computer Science graduate from St. Louis College Valenzuela.">
     <meta property="og:title" content="Lorenz F. Estrella | Full-Stack Developer">
     <meta property="og:description" content="Full-Stack Developer building web and mobile applications with modern tools.">
-    <meta property="og:url" content="https://lornez07.github.io/portfolio-website">
+    <meta property="og:url" content="https://lorenz-estrella.vercel.app">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lorenz-estrella.vercel.app/og-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lorenz F. Estrella",
+        "jobTitle": "Full-Stack Developer",
+        "email": "lorenzstrll@gmail.com",
+        "url": "https://lorenz-estrella.vercel.app",
+        "sameAs": [
+            "https://github.com/Lornez07",
+            "https://linkedin.com/in/lorenz-estrella-88b566371",
+            "https://facebook.com/lo.renz.165"
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
     
     <nav class="navbar">
         <div class="nav-container">
@@ -37,12 +57,13 @@
     </nav>
 
     <section id="home" class="hero">
+        <canvas id="particleCanvas"></canvas>
         <div class="hero-content">
             <div class="typing-effect">
                 <span class="greeting">Hello, I'm</span>
             </div>
             <h1 class="hero-title">Lorenz F. Estrella</h1>
-            <p class="hero-subtitle">Full-Stack Developer</p>
+            <p class="hero-subtitle"><span id="typedTitle"></span><span class="typed-cursor">|</span></p>
             <p class="hero-description">
                 A fresh graduate with skills in full-stack development and a room for improvement.
                 I build web and mobile applications using modern tools.
@@ -102,6 +123,10 @@
                         <div class="stat">
                             <span class="stat-number" data-count="1">0</span>
                             <span class="stat-label">Year Building</span>
+                        </div>
+                        <div class="stat" id="githubStat">
+                            <span class="stat-number" id="githubRepoCount">-</span>
+                            <span class="stat-label">GitHub Repos</span>
                         </div>
                     </div>
                 </div>
@@ -229,10 +254,10 @@
         <div class="container">
             <h2 class="section-title"><span class="line"></span>Projects</h2>
             <div class="projects-grid">
-                <article class="project-card">
+                <article class="project-card" data-project="convergent-scanner" onclick="openProjectModal('convergent-scanner')">
                     <div class="project-content">
                         <h3>Convergent Scanner</h3>
-                        <p>Cross-platform License Plate Recognition (LPR) mobile & web app with on-device ML Kit Auto-Scan at 30fps, Roboflow + Plate Recognizer cloud validation, and fuzzy matching algorithms.</p>
+                        <p>Cross-platform License Plate Recognition (LPR) mobile & web app with on-device ML Kit Auto-Scan at 30fps.</p>
                         <div class="project-tech">
                             <span>Flutter</span>
                             <span>Dart</span>
@@ -245,7 +270,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-project="epark-mo" onclick="openProjectModal('epark-mo')">
                     <div class="project-content">
                         <h3>E-Park Mo</h3>
                         <p>Smart parking system with real-time slot monitoring, reservation system, boom barrier control, and ESP32 hardware integration. Thesis project.</p>
@@ -260,7 +285,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-project="marqai" onclick="openProjectModal('marqai')">
                     <div class="project-content">
                         <h3>MarqAI</h3>
                         <p>AI companion chat app with voice mode, holographic UI, and Google Gemini integration. Features voice input/output and real-time chat.</p>
@@ -275,7 +300,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-project="flappy-avatar" onclick="openProjectModal('flappy-avatar')">
                     <div class="project-content">
                         <h3>Flappy Avatar</h3>
                         <p>Flappy Bird-style game with custom avatar upload, circular cropping, and Supabase leaderboard. High-DPI canvas rendering with rotational physics.</p>
@@ -290,7 +315,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-project="dvya-basketball" onclick="openProjectModal('dvya-basketball')">
                     <div class="project-content">
                         <h3>DVYA Basketball</h3>
                         <p>Full-stack basketball league management app with Supabase auth, PWA support, team/player management, and real-time standings.</p>
@@ -305,7 +330,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-project="mock-interview" onclick="openProjectModal('mock-interview')">
                     <div class="project-content">
                         <h3>AI Mock Interview Coach</h3>
                         <p>AI-powered interview practice app with role-specific questions, instant scoring (1-10), and detailed feedback via Google Gemini AI.</p>
@@ -320,7 +345,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-project="rgj-trucking" onclick="openProjectModal('rgj-trucking')">
                     <div class="project-content">
                         <h3>RGJ Trucking Services</h3>
                         <p>Booking website for trucking services with Vercel serverless backend and email notifications via Nodemailer.</p>
@@ -345,7 +370,7 @@
             <div class="awards-grid">
                 <a href="javascript:void(0)" class="award-card" id="awardPhoto" onclick="openLightbox()">
                     <div class="award-preview">
-                        <img src="Coursera/best-software-project.jpg" alt="Best Software Project award photo">
+                        <img src="Coursera/best-software-project.jpg" alt="Best Software Project award photo" loading="lazy">
                     </div>
                     <h3>Best Software Project</h3>
                     <p>St. Louis College Valenzuela — Capstone recognition for E-Park Mo smart parking system.</p>
@@ -444,6 +469,13 @@
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
         <img class="lightbox-img" src="Coursera/best-software-project.jpg" alt="Best Software Project award photo">
+    </div>
+
+    <div class="project-modal" id="projectModal" onclick="closeProjectModal(event)">
+        <div class="project-modal-content">
+            <span class="project-modal-close" onclick="closeProjectModal()">&times;</span>
+            <div id="projectModalBody"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
