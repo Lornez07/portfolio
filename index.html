@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Lorenz F. Estrella | Full-Stack Developer</title>
+    <meta name="description" content="Full-Stack Developer specializing in React, Next.js, Flutter, and Node.js. BS Computer Science graduate from St. Louis College Valenzuela.">
+    <meta property="og:title" content="Lorenz F. Estrella | Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer building web and mobile applications with modern tools.">
+    <meta property="og:url" content="https://lornez07.github.io/portfolio-website">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -17,8 +22,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -35,18 +42,19 @@
                 <span class="greeting">Hello, I'm</span>
             </div>
             <h1 class="hero-title">Lorenz F. Estrella</h1>
-            <p class="hero-subtitle">Computer Science Student</p>
+            <p class="hero-subtitle">Full-Stack Developer</p>
             <p class="hero-description">
-                A motivated 4th-year BS Computer Science student eager to apply technical knowledge 
-                and learn from experienced professionals through hands-on experience.
+                A fresh graduate with skills in full-stack development and a room for improvement.
+                I build web and mobile applications using modern tools.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="Estrella, Lorenz F..pdf" class="btn btn-resume" download>Download Resume</a>
             </div>
             <div class="social-links">
-                <a href="https://github.com" class="social-link" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/lorenz-f-estrella" class="social-link" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Lornez07" class="social-link" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/lorenz-estrella-88b566371" class="social-link" target="_blank">LinkedIn</a>
                 <a href="https://facebook.com/lo.renz.165" class="social-link" target="_blank">Facebook</a>
             </div>
         </div>
@@ -59,9 +67,9 @@
                 </div>
                 <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
   <span class="property">name</span>: <span class="string">"Lorenz F. Estrella"</span>,
-  <span class="property">role</span>: <span class="string">"Computer Science Student"</span>,
-  <span class="property">skills</span>: [<span class="string">"Python"</span>, <span class="string">"JavaScript"</span>, <span class="string">"HTML/CSS"</span>, <span class="string">"Java"</span>],
-  <span class="property">passion</span>: <span class="string">"Learning and problem solving"</span>,
+  <span class="property">role</span>: <span class="string">"Full-Stack Developer"</span>,
+  <span class="property">skills</span>: [<span class="string">"React"</span>, <span class="string">"Next.js"</span>, <span class="string">"Flutter"</span>, <span class="string">"Node.js"</span>],
+  <span class="property">passion</span>: <span class="string">"Building and solving problems"</span>,
   <span class="property">available</span>: <span class="boolean">true</span>
 };</code></pre>
             </div>
@@ -74,27 +82,26 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm a motivated 4th-year BS Computer Science student with a foundational 
-                        understanding of Python, HTML, CSS, and JavaScript from academic projects. 
-                        Eager to apply my technical knowledge and learn from experienced professionals 
-                        through hands-on experience and collaboration.
+                        I'm a fresh graduate with a degree in Computer Science and a passion for building 
+                        full-stack web and mobile applications. I enjoy working with modern tools like 
+                        React, Next.js, Flutter, and Node.js to create real-world solutions.
                     </p>
                     <p>
                         When I'm not coding, you can find me exploring new technologies, 
-                        practicing AI prompt engineering, or working on design projects with Figma.
+                        practicing AI prompt engineering, or working on side projects.
                     </p>
                     <div class="stats">
                         <div class="stat">
+                            <span class="stat-number" data-count="8">0</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Tech Stacks</span>
+                        </div>
+                        <div class="stat">
                             <span class="stat-number" data-count="1">0</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" data-count="15">0</span>
-                            <span class="stat-label">Academic Projects</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number" data-count="5">0</span>
-                            <span class="stat-label">Internships</span>
+                            <span class="stat-label">Year Building</span>
                         </div>
                     </div>
                 </div>
@@ -105,13 +112,42 @@
                         </div>
                         <div class="terminal-body">
                             <p><span class="prompt">$</span> whoami</p>
-                            <p class="output">Passionate Developer</p>
+                            <p class="output">Full-Stack Developer</p>
                             <p><span class="prompt">$</span> cat interests.txt</p>
-                            <p class="output">Open Source • Clean Code • Cloud Computing</p>
-                            <p><span class="output">  Machine Learning • System Design</span></p>
+                            <p class="output">Web Apps • Mobile • AI • IoT</p>
+                            <p><span class="output">  Open Source • Clean Code</span></p>
                             <p><span class="prompt">$</span> ./location</p>
-                            <p class="output">Earth, Internet</p>
+                            <p class="output">Valenzuela, Philippines</p>
                             <p><span class="blinking">_</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title"><span class="line"></span>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2026 - May 2026</div>
+                        <h3>IT Intern</h3>
+                        <h4>Convergent Recovery & Management Solutions Inc.</h4>
+                        <ul>
+                            <li>Developed <strong>Convergent Scanner</strong>, a cross-platform mobile and web License Plate Recognition (LPR) application using Flutter and Dart.</li>
+                            <li>Built a high-speed on-device Auto-Scan camera pipeline using Google ML Kit executing text recognition at 30 fps.</li>
+                            <li>Designed a cloud-assisted validation pipeline integrating Roboflow API object cropping with Plate Recognizer LPR API backend.</li>
+                            <li>Developed region-aware auto-correction filters and fuzzy database algorithms to mitigate alphanumeric character ambiguities.</li>
+                        </ul>
+                        <div class="timeline-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>Google ML Kit</span>
+                            <span>Roboflow</span>
+                            <span>Plate Recognizer</span>
                         </div>
                     </div>
                 </div>
@@ -124,52 +160,65 @@
             <h2 class="section-title"><span class="line"></span>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <h3>Frontend</h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">Python</span>
+                            <span class="skill-name">React / Next.js</span>
                             <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-name">TypeScript</span>
                             <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Java</span>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+                            <span class="skill-name">Tailwind CSS</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">HTML/CSS</span>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                            <span class="skill-name">Flutter / Dart</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="65"></div></div>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Frameworks & Technologies</h3>
+                    <h3>Backend & Database</h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">Node.js</span>
+                            <span class="skill-name">Node.js / Express</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase / Supabase</span>
                             <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Flutter</span>
+                            <span class="skill-name">MongoDB / SQL</span>
                             <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">Figma</span>
+                            <span class="skill-name">REST APIs</span>
                             <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java / Go</span>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="55"></div></div>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Skills & Tools</h3>
+                    <h3>Tools & Platforms</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag">AI Prompt Engineering</span>
-                        <span class="tech-tag">Troubleshooting</span>
-                        <span class="tech-tag">Technical Support</span>
-                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Git & GitHub</span>
+                        <span class="tech-tag">Vercel</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Postman</span>
                         <span class="tech-tag">Linux</span>
-                        <span class="tech-tag">Problem Solving</span>
+                        <span class="tech-tag">PHP</span>
                     </div>
                 </div>
             </div>
@@ -178,68 +227,154 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title"><span class="line"></span>Academic Projects</h2>
+            <h2 class="section-title"><span class="line"></span>Projects</h2>
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-content">
-                        <div class="project-icon">💻</div>
-                        <h3>Student Management System</h3>
-                        <p>A comprehensive web application for managing student records, grades, and attendance using Python and web technologies.</p>
+                        <div class="project-icon">📸</div>
+                        <h3>Convergent Scanner</h3>
+                        <p>Cross-platform License Plate Recognition (LPR) mobile & web app with on-device ML Kit Auto-Scan at 30fps, Roboflow + Plate Recognizer cloud validation, and fuzzy matching algorithms.</p>
                         <div class="project-tech">
-                            <span>Python</span>
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>ML Kit</span>
+                            <span>Roboflow</span>
+                            <span>LPR API</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-link project-link-internal">Internship Project</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">🚗</div>
+                        <h3>E-Park Mo</h3>
+                        <p>Smart parking system with real-time slot monitoring, reservation system, boom barrier control, and ESP32 hardware integration. Thesis project.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>IoT</span>
+                            <span>Arduino</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lornez07/eparkmo" class="project-link" target="_blank">View Code →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">🤖</div>
+                        <h3>MarqAI</h3>
+                        <p>AI companion chat app with voice mode, holographic UI, and Google Gemini integration. Features voice input/output and real-time chat.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Gemini AI</span>
+                            <span>Framer Motion</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lornez07/marqai" class="project-link" target="_blank">View Code →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">🎮</div>
+                        <h3>Flappy Avatar</h3>
+                        <p>Flappy Bird-style game with custom avatar upload, circular cropping, and Supabase leaderboard. High-DPI canvas rendering with rotational physics.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Canvas</span>
+                            <span>Supabase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lornez07/flappy-avatar" class="project-link" target="_blank">View Code →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">🏀</div>
+                        <h3>DVYA Basketball</h3>
+                        <p>Full-stack basketball league management app with Supabase auth, PWA support, team/player management, and real-time standings.</p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>Supabase</span>
+                            <span>TypeScript</span>
+                            <span>PWA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lornez07/dvya-basketball" class="project-link" target="_blank">View Code →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">🎤</div>
+                        <h3>AI Mock Interview Coach</h3>
+                        <p>AI-powered interview practice app with role-specific questions, instant scoring (1-10), and detailed feedback via Google Gemini AI.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Gemini AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Lornez07/mock-interview-coach" class="project-link" target="_blank">View Code →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-content">
+                        <div class="project-icon">🚚</div>
+                        <h3>RGJ Trucking Services</h3>
+                        <p>Booking website for trucking services with Vercel serverless backend and email notifications via Nodemailer.</p>
+                        <div class="project-tech">
                             <span>HTML/CSS</span>
                             <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>Vercel</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="project-link">View Code →</a>
+                            <a href="https://github.com/Lornez07/rgj-trucking" class="project-link" target="_blank">View Code →</a>
                         </div>
                     </div>
                 </article>
-                <article class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">📊</div>
-                        <h3>Data Analysis Tool</h3>
-                        <p>A Python-based application for analyzing datasets and generating visualizations to help understand data patterns and trends.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Code →</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">🔧</div>
-                        <h3>System Troubleshooting Guide</h3>
-                        <p>An interactive guide application built with HTML/CSS/JavaScript that helps diagnose and solve common computer issues.</p>
-                        <div class="project-tech">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>Problem Solving</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Code →</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">🎨</div>
-                        <h3>UI/UX Design Project</h3>
-                        <p>A mobile application interface design created in Figma, focusing on user experience and modern design principles.</p>
-                        <div class="project-tech">
-                            <span>Figma</span>
-                            <span>UI/UX Design</span>
-                            <span>Prototyping</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Design →</a>
-                        </div>
-                    </div>
-                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2 class="section-title"><span class="line"></span>Awards & Certifications</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <h3>Best Software Project</h3>
+                    <p>St. Louis College Valenzuela — Capstone recognition for E-Park Mo smart parking system.</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🤖</div>
+                    <h3>Google AI Essentials</h3>
+                    <p>Coursera Specialization — Credential ID: NBTLV779QYDH (2026)</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🧠</div>
+                    <h3>AI Fundamentals</h3>
+                    <p>Coursera — Credential ID: MKCEBO3YHSNR (2026)</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">✍️</div>
+                    <h3>Prompt Engineering</h3>
+                    <p>Start Writing Prompts like a Pro — Coursera | Credential ID: 1277QV6TIIDV (2026)</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">📱</div>
+                    <h3>AI for App Building</h3>
+                    <p>Coursera — Credential ID: 7EB8Y35EEB22 (2026)</p>
+                </div>
             </div>
         </div>
     </section>
@@ -250,15 +385,11 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
-                    <p>I'm currently seeking internship opportunities and eager to learn from experienced professionals. Feel free to reach out!</p>
+                    <p>I'm currently looking for opportunities as a full-stack developer. Feel free to reach out!</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <span class="contact-icon">✉</span>
                             <span>lorenzstrll@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <span>Disiplina Village, Bignay, Valenzuela City</span>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📱</span>
@@ -266,7 +397,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-group">
                         <input type="text" id="name" name="name" required placeholder=" ">
                         <label for="name">Your Name</label>
@@ -291,6 +422,8 @@
             <p class="footer-copyright">© 2026 All Rights Reserved</p>
         </div>
     </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
 </body>

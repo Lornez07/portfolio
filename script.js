@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initSmoothScroll();
     initNavbarScroll();
+    initBackToTop();
+    initContactForm();
 });
 
 // ============================================
@@ -273,27 +275,88 @@ function initNavbarScroll() {
 }
 
 // ============================================
-// Contact Form Handler
+// Back to Top Button
 // ============================================
-const contactForm = document.getElementById('contactForm');
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
 
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (name && email && message) {
-            // Show success message (in production, you'd send to a backend)
-            alert(`Thanks ${name}! Your message has been "sent" (demo mode).`);
-            contactForm.reset();
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
         }
     });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ============================================
+// Contact Form Handler
+// ============================================
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const btn = form.querySelector('button[type="submit"]');
+    const btnText = btn.textContent;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name) return showFormError(form.name, 'Name is required');
+        if (!email) return showFormError(form.email, 'Email is required');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+            return showFormError(form.email, 'Invalid email address');
+        if (!message) return showFormError(form.message, 'Message is required');
+
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.error || 'Failed to send');
+
+            form.innerHTML = `<div class="form-success">
+                <span class="success-icon">✓</span>
+                <p>Message sent successfully! I'll get back to you soon.</p>
+            </div>`;
+        } catch (err) {
+            btn.textContent = btnText;
+            btn.disabled = false;
+            showFormError(null, err.message);
+        }
+    });
+}
+
+function showFormError(input, msg) {
+    const existing = document.querySelector('.form-error');
+    if (existing) existing.remove();
+
+    const err = document.createElement('p');
+    err.className = 'form-error';
+    err.textContent = msg;
+
+    if (input) {
+        input.focus();
+        input.parentNode.appendChild(err);
+    } else {
+        document.querySelector('.contact-form').prepend(err);
+    }
 }
 
 // ============================================
