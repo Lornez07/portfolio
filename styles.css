@@ -26,6 +26,34 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --glow-primary: 0 0 20px rgba(0, 255, 136, 0.3);
     --glow-secondary: 0 0 20px rgba(0, 212, 255, 0.3);
+    --bg-navbar: rgba(10, 10, 15, 0.8);
+    --bg-navbar-scrolled: rgba(10, 10, 15, 0.95);
+    --shadow-navbar: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.light-mode {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f0f0f5;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a5a;
+    --text-muted: #6b7280;
+    --accent-primary: #059669;
+    --accent-secondary: #0284c7;
+    --accent-tertiary: #dc2626;
+    --accent-purple: #7c3aed;
+    --border-color: #e5e7eb;
+    --code-keyword: #7c3aed;
+    --code-string: #b45309;
+    --code-variable: #059669;
+    --code-property: #0284c7;
+    --code-comment: #9ca3af;
+    --glow-primary: 0 0 20px rgba(5, 150, 105, 0.2);
+    --glow-secondary: 0 0 20px rgba(2, 132, 199, 0.2);
+    --bg-navbar: rgba(255, 255, 255, 0.8);
+    --bg-navbar-scrolled: rgba(255, 255, 255, 0.95);
+    --shadow-navbar: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Reset & Base */
@@ -46,6 +74,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     cursor: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Cursor */
@@ -87,10 +116,15 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 10, 15, 0.8);
+    background: var(--bg-navbar);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background: var(--bg-navbar-scrolled);
+    box-shadow: var(--shadow-navbar);
 }
 
 .nav-container {
@@ -163,6 +197,42 @@ body {
     height: 2px;
     background: var(--text-primary);
     transition: var(--transition);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-primary);
+    transform: rotate(15deg);
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.light-mode .theme-toggle .moon-icon {
+    display: none;
+}
+
+.light-mode .theme-toggle .sun-icon {
+    display: block;
 }
 
 /* Hero Section */

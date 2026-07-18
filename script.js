@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initSmoothScroll();
     initNavbarScroll();
+    initThemeToggle();
     initBackToTop();
     initContactForm();
     initTypingAnimation();
@@ -183,8 +184,17 @@ function initNavbarScroll() {
     if (!navbar) return;
 
     window.addEventListener('scroll', () => {
-        navbar.style.background = window.scrollY > 50 ? 'rgba(10, 10, 15, 0.95)' : 'rgba(10, 10, 15, 0.8)';
-        navbar.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0, 0, 0, 0.3)' : 'none';
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+}
+
+function initThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const isLight = document.documentElement.classList.toggle('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
 }
 
