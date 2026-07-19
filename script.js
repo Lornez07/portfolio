@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNav();
     initScrollProgress();
     initParticles();
+    initTiltEffect();
+    initMagneticButtons();
+    initRevealAnimations();
+    initParallax();
 });
 
 function initCustomCursor() {
@@ -533,6 +537,88 @@ function openLightbox() {
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
+}
+
+// ============================================
+// 3D Tilt Effect on Project Cards
+// ============================================
+function initTiltEffect() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.classList.add('tilt-card');
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+}
+
+// ============================================
+// Magnetic Button Effect
+// ============================================
+function initMagneticButtons() {
+    const btns = document.querySelectorAll('.hero-buttons .btn');
+    btns.forEach(btn => {
+        btn.classList.add('magnetic-btn');
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+        });
+    });
+}
+
+// ============================================
+// Staggered Reveal on Scroll
+// ============================================
+function initRevealAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+        observer.observe(el);
+        el.addEventListener('transitionend', function handler(e) {
+            if (e.propertyName === 'transform') {
+                this.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                this.removeEventListener('transitionend', handler);
+            }
+        });
+    });
+}
+
+// ============================================
+// Parallax Scrolling
+// ============================================
+function initParallax() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        if (scrolled < window.innerHeight) {
+            const speed = 0.3;
+            hero.style.setProperty('--parallax-y', `${scrolled * speed}px`);
+        }
+    });
 }
 
 // ============================================
