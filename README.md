@@ -4,7 +4,7 @@ A dark-themed developer portfolio showcasing my projects and skills as a full-st
 
 ## Live Demo
 
-[https://lorenz-estrella.vercel.app](https://lorenz-estrella.vercel.app)
+[https://lorenzestrella.vercel.app](https://lorenzestrella.vercel.app)
 
 ## Tech Stack
 
