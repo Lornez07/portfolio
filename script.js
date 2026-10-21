@@ -443,6 +443,15 @@ function initParticles() {
 // Project Modal
 // ============================================
 const projects = {
+    'shopcommerce': {
+        title: 'ShopCommerce',
+        description: 'Storefront for a small kitchen-goods shop: Next.js App Router over a Supabase Postgres catalogue, magic-link accounts, and an admin dashboard for products and orders. Checkout uses Stripe PaymentIntents with the embedded Payment Element, and a signature-verified webhook is the only writer to the orders table — made idempotent by a unique index so a retried delivery cannot duplicate an order. Eighteen Playwright tests cover browsing, the auth guard, and the admin gate. Stripe runs in test mode: card 4242 4242 4242 4242 walks the full flow.',
+        tech: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind'],
+        links: [
+            { text: 'Live Demo →', url: 'https://shopcommerce-nine.vercel.app' },
+            { text: 'View Code →', url: 'https://github.com/Lornez07/shopcommerce' },
+        ],
+    },
     'convergent-scanner': {
         title: 'Convergent Scanner',
         description: 'Cross-platform License Plate Recognition (LPR) mobile and web application built during my IT internship. Features on-device ML Kit Auto-Scan at 30fps, cloud-assisted validation using Roboflow API and Plate Recognizer LPR API backend, and fuzzy matching algorithms to handle character ambiguities.',
@@ -546,6 +555,12 @@ function initTiltEffect() {
     const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => {
         card.classList.add('tilt-card');
+
+        // Links inside a card open in a new tab; without this the click also
+        // bubbles to the card's onclick and opens the modal behind it.
+        card.querySelectorAll('.project-links a').forEach(link => {
+            link.addEventListener('click', (e) => e.stopPropagation());
+        });
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
