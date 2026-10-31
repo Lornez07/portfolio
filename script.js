@@ -443,6 +443,15 @@ function initParticles() {
 // Project Modal
 // ============================================
 const projects = {
+    'erp-system': {
+        title: 'Demo Trade ERP',
+        description: 'A working purchase-to-sell ERP built to show ERP fundamentals on a modern stack. Stock exists only as the sum of an append-only stock_movements ledger (v_product_stock view) — there is no stock column to edit. Sales and purchasing go through sequenced states (draft → posted / received) via SECURITY DEFINER Postgres RPCs that re-check stock under FOR UPDATE row locks and recompute totals server-side, so a tampered request cannot post wrong amounts. Negative stock is blocked three ways: RPC validation, a ledger trigger, and RLS write gating. Four roles (admin, sales, purchasing, viewer) enforced by a 20-policy RLS matrix, seeded with a reconciled PH trading company dataset (16 products, 4 suppliers, 6 customers — every quantity traceable to a movement).',
+        tech: ['React', 'TypeScript', 'Vite', 'Supabase', 'Postgres', 'Tailwind'],
+        links: [
+            { text: 'Live Demo →', url: 'https://erp-system-demos.vercel.app' },
+            { text: 'View Code →', url: 'https://github.com/Lornez07/erp-system' },
+        ],
+    },
     'shopcommerce': {
         title: 'ShopCommerce',
         description: 'Storefront for a small kitchen-goods shop: Next.js App Router over a Supabase Postgres catalogue, magic-link accounts, and an admin dashboard for products and orders. Checkout uses Stripe PaymentIntents with the embedded Payment Element, and a signature-verified webhook is the only writer to the orders table — made idempotent by a unique index so a retried delivery cannot duplicate an order. Eighteen Playwright tests cover browsing, the auth guard, and the admin gate. Stripe runs in test mode: card 4242 4242 4242 4242 walks the full flow.',
@@ -518,7 +527,7 @@ function openProjectModal(id) {
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-}
+};
 
 function closeProjectModal(e) {
     if (e && e.target !== e.currentTarget) return;

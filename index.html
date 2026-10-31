@@ -269,6 +269,23 @@
         <div class="container">
             <h2 class="section-title" data-reveal data-reveal-delay="100"><span class="line"></span>Projects</h2>
             <div class="projects-grid">
+                <article class="project-card" data-project="erp-system" onclick="openProjectModal('erp-system')">
+                    <div class="project-content">
+                        <h3>Demo Trade ERP</h3>
+                        <p>Mini-ERP demonstrating real ERP fundamentals: stock derived from an append-only movement ledger, order posting via Postgres RPCs with row locks, and role-based access enforced by RLS.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Supabase</span>
+                            <span>Postgres</span>
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://erp-system-demos.vercel.app" class="project-link" target="_blank">Live Demo →</a>
+                            <a href="https://github.com/Lornez07/erp-system" class="project-link" target="_blank">View Code →</a>
+                        </div>
+                    </div>
+                </article>
                 <article class="project-card" data-project="shopcommerce" onclick="openProjectModal('shopcommerce')">
                     <div class="project-content">
                         <h3>ShopCommerce</h3>
@@ -459,7 +476,7 @@
                     <span class="award-view">View Certificate →</span>
                 </a>
 
-            </div>
+            </div>            </div>
         </div>
     </section>
 
