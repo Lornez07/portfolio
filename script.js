@@ -504,7 +504,10 @@ const projects = {
         title: 'RGJ Trucking Services',
         description: 'Booking website for trucking services with Vercel serverless backend and email notifications via Nodemailer. Features service booking, inquiry forms, and contact functionality.',
         tech: ['HTML/CSS', 'JavaScript', 'Node.js', 'Vercel'],
-        links: [{ text: 'View Code →', url: 'https://github.com/Lornez07/rgj-trucking' }],
+        links: [
+            { text: 'Live Demo →', url: 'https://rgjtrucking.vercel.app' },
+            { text: 'View Code →', url: 'https://github.com/Lornez07/rgj-trucking' },
+        ],
     },
 };
 
