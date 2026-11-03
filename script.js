@@ -471,7 +471,10 @@ const projects = {
         title: 'E-Park Mo',
         description: 'Smart parking system with real-time slot monitoring, reservation system, boom barrier control, and ESP32 hardware integration. Capstone thesis project recognized as Best Software Project at St. Louis College Valenzuela.',
         tech: ['Flutter', 'Firebase', 'IoT', 'Arduino'],
-        links: [{ text: 'View Code →', url: 'https://github.com/Lornez07/eparkmo' }],
+        links: [
+            { text: 'Live Demo →', url: 'https://e-park-mo-fe42a.web.app' },
+            { text: 'View Code →', url: 'https://github.com/Lornez07/eparkmo' },
+        ],
     },
     'marqai': {
         title: 'MarqAI',
