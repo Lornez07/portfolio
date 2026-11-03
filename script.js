@@ -492,7 +492,7 @@ const projects = {
         title: 'DVYA Basketball',
         description: 'Full-stack basketball league management app with Supabase authentication, PWA support, team and player management, real-time standings, and match scheduling.',
         tech: ['Next.js', 'Supabase', 'TypeScript', 'PWA'],
-        links: [{ text: 'View Code →', url: 'https://github.com/Lornez07/dvya-basketball' }],
+        links: [{ text: 'View Code →', url: 'https://github.com/Lornez07/DVYA-League' }],
     },
     'mock-interview': {
         title: 'AI Mock Interview Coach',
@@ -506,7 +506,7 @@ const projects = {
         tech: ['HTML/CSS', 'JavaScript', 'Node.js', 'Vercel'],
         links: [
             { text: 'Live Demo →', url: 'https://rgjtrucking.vercel.app' },
-            { text: 'View Code →', url: 'https://github.com/Lornez07/rgj-trucking' },
+            { text: 'View Code →', url: 'https://github.com/Lornez07/RGJ' },
         ],
     },
 };
